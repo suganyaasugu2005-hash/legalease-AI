@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LegalEaseAI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <div class="logo-row">
+
+            <div class="scale">
+                ⚖️
+            </div>
+
+            <h1>LegalEaseAI</h1>
+
+        </div>
+
+        <p>
+            AI-Powered Legal Document Generator
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <div class="form-card">
+
+            <label for="documentType">
+                Document Type
+            </label>
+
+            <input
+                type="text"
+                id="documentType"
+                value="Agreement"
+                placeholder="Enter document type"
+            >
+
+
+            <label for="parties">
+                Parties
+            </label>
+
+            <textarea
+                id="parties"
+                placeholder="Enter parties involved"
+            >-</textarea>
+
+
+            <label for="effectiveDate">
+                Effective Date
+            </label>
+
+            <input
+                type="date"
+                id="effectiveDate"
+            >
+
+
+            <label for="terms">
+                Terms and Conditions
+            </label>
+
+            <textarea
+                id="terms"
+                class="terms"
+                placeholder="Enter terms and conditions"
+            >The parties agree to the terms of this agreement.
+Payment shall be made as mutually agreed.
+Either party may terminate the agreement with written notice.</textarea>
+
+
+            <button
+                id="generateBtn"
+                onclick="generateDocument()"
+            >
+
+                ✨ Generate Legal Document
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            Generating legal document...
+
+        </div>
+
+
+        <div
+            id="result"
+            class="result hidden"
+        >
+
+            <div class="result-header">
+
+                <h2>
+                    Generated Legal Document
+                </h2>
+
+                <a
+                    id="downloadBtn"
+                    class="download-btn"
+                    href="#"
+                >
+
+                    Download PDF
+
+                </a>
+
+            </div>
+
+
+            <pre
+                id="documentOutput"
+            ></pre>
+
+        </div>
+
+
+        <div
+            id="error"
+            class="error hidden"
+        ></div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            LegalEaseAI © 2026
+        </p>
+
+        <small>
+            This application generates document drafts and does not
+            constitute legal advice.
+        </small>
+
+    </footer>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+</body>
+
+</html>
+
